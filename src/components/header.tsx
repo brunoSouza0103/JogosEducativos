@@ -1,11 +1,13 @@
 type HeaderProps = {
   onMenuToggle: () => void
+  walletBalance: number
+  onLogin: () => void
 }
 
-function Header({ onMenuToggle }: HeaderProps) {
+function Header({ onMenuToggle, walletBalance, onLogin }: HeaderProps) {
     return(
         <header className="header">
-            <button className="menu-toggle" onClick={onMenuToggle} title="Abrir/fechar menu">
+            <button className="menu-toggle" onClick={onMenuToggle}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -14,16 +16,12 @@ function Header({ onMenuToggle }: HeaderProps) {
                 <span className="logo">J</span>
                 <div>
                     <strong>Jogos Educativos</strong>
-                    <p>Sistema de aprendizagem interativa</p>
                 </div>
             </div>
-            <nav className="menu">
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+            <div className="header-right">
+              <span className="header-wallet">Saldo: R$ {walletBalance.toFixed(2)}</span>
+              <button className="header-login" onClick={onLogin}>Login</button>
+            </div>
         </header>
     )
 }

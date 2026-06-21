@@ -1,4 +1,4 @@
-function footer() {
+function Footer() {
     return (
         <footer>
             <p>© 2026 - Todos os direitos reservados</p>
@@ -6,4 +6,4 @@ function footer() {
     );
 }
 
-export default footer;
+export default Footer;
